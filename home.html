@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fashion Products</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- ADD THIS LINE -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    
+/* HEADER */
+
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f2f2;
+  
+  border-bottom: 1px solid white;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  font-size: 21px;
+}
+
+.menu li {
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.menu li:hover {
+  color: #888;
+}
+
+/* Right Section */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.right i {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.right i:hover {
+  color: #555;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 8px 20px;
+  border-radius: 15px;
+  border: none;
+  background: #222;
+  color: white;
+  font-size: 19px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #444;
+}
+
+/* HEADER */
+
+
+/* FOOTER */
+.footer {
+  background: #1c1c1c;
+  color: #ccc;
+  padding: 60px 80px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-logo {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  font-size: 21px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+/* Headings */
+.footer h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+/* Links */
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer ul li:hover {
+  color: #FF6F61; /* Theme Color */
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons i {
+  background: #2a2a2a;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons i:hover {
+  background: #FF6F61;
+}
+
+/* FOOTER */
+
+
+.category {
+  text-align: center;
+}
+
+.category h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.category p {
+  color: #999;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.cat-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.cat-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* OVERLAY TEXT */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.6);
+  padding: 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 80px;
+}
+
+/* LEFT TEXT */
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  color: #999;
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.hero-text button {
+  background: #FF6F61;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* RIGHT IMAGES */
+.hero-images {
+  display: flex;
+  gap: 25px;
+}
+
+.hero-images img {
+  width: 140px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 110%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: #fff;
+}
+
+.info h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.info p {
+  font-size: 13px;
+}
+
+.price {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-weight: bold;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+button {
+  background: #FF6F61;
+  border: none;
+  padding: 8px 15px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.newsletter h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  color: #888;
+  margin-bottom: 25px;
+}
+
+.subscribe-box {
+  display: flex;
+  justify-content: center;
+}
+
+.subscribe-box input {
+  width: 350px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.subscribe-box button {
+  border-radius: 0 5px 5px 0;
+}
+
+
+.sale-banner {
+  height: 300px;
+  background: url("o1.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Soft light overlay */
+.sale-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.sale-banner h1 {
+  position: relative;
+  font-size: 64px;
+  font-weight: 700;
+  color: #4B0F0F; /* deep maroon */
+  letter-spacing: 2px;
+}
+.cart-link{
+  color:#000;
+  text-decoration:none;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.menu li{
+  padding:10px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.menu li:hover{
+  background:#ffe5e2;
+}
+
+.menu .active{
+  background:#FF6F61;   /* ORANGE */
+  color:white;
+  font-weight:600;
+}
+</style>
+</head>
+<body>
+
+<!-- 
+  HEADER  -->
+
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">Fashion Word</div>
+
+     <!-- Menu -->
+    <ul class="menu">
+      <li class="active"><a href="home.html" class="cart-link">Home</a></li>
+      <li><a href="cat.html" class="cart-link">Categories</a></li>
+      <li><a href="about.html" class="cart-link">About Us</a></li>
+      <li><a href="contact.html" class="cart-link">Contact</a></li>
+    </ul>
+
+    <!-- Right Icons -->
+    <div class="right">
+
+       <a href="shopcart.html" class="cart-link"><i class="fa-solid fa-cart-shopping"></i></a>
+       <a href="logmob.html" class="cart-link"><i class="fa-regular fa-user"></i></a>
+
+      <button class="login-btn" onclick="location.href='login.html'">Login</button>
+    </div>
+  </nav>
+
+   <!-- HEADER -->
+
+    <!-- HERO -->
+
+<br><br><section class="hero">
+
+  <div class="hero-text">
+    <h1>Elevate Your Style This Season</h1>
+    <p>
+      Discover our new collection of premium fashion pieces
+      designed for the modern connoisseur.
+    </p>
+    <button>Go To Shop</button>
+  </div>
+
+  <div class="hero-images">
+    <img src="h1.jpg" />
+    <img src="h2.jpg" />
+    <img src="h3.jpg" />
+    <img src="h4.jpg" />
+  </div>
+
+</section>
+
+<!-- CATEGORY -->
+
+<br><br><section class="category">
+  <h2>Shop By Category</h2>
+ <br><p>Curated collections for every occasion</p>
+
+  <div class="category-grid">
+
+    <div class="cat-card">
+      <img src="c1.jpg" />
+      <div class="overlay">Modern</div>
+    </div>
+
+    <div class="cat-card">
+      <img src="c2.jpg" />
+      <div class="overlay">Casual</div>
+    </div>
+
+    <div class="cat-card">
+      <img src="c3.jpg" />
+      <div class="overlay">Traditional</div>
+    </div>
+
+    <div class="cat-card">
+      <img src="c4.jpg" />
+      <div class="overlay">Formal</div>
+    </div>
+
+  </div>
+</section>
+
+
+<br><br><section class="sale-banner">
+  <h1>50% OFF</h1>
+</section>
+
+
+<!-- PRODUCTS -->
+<br><br><section class="products">
+
+  <div class="card">
+    <img src="b1.jpg" />
+    <div class="info">
+      <h3>T-Shirt</h3>
+      <p>Cotton Clothes for Summer</p>
+      <span class="price">$250</span>
+      <div class="bottom">
+        <span>4 ⭐</span>
+       <button onclick="location.href='checkout.html'">Buy Now</button>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="b2.jpg" />
+    <div class="info">
+      <h3>Scout</h3>
+      <p>Cotton Clothes for Summer</p>
+      <span class="price">$250</span>
+      <div class="bottom">
+        <span>4 ⭐</span>
+       <button onclick="location.href='checkout.html'">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="b3.jpg" />
+    <div class="info">
+      <h3>Gown</h3>
+      <p>Cotton Clothes for Summer</p>
+      <span class="price">$250</span>
+      <div class="bottom">
+        <span>4 ⭐</span>
+       <button onclick="location.href='checkout.html'">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="b4.jpg" />
+    <div class="info">
+      <h3>Top</h3>
+      <p>Cotton Clothes for Summer</p>
+      <span class="price">$250</span>
+      <div class="bottom">
+        <span>4 ⭐</span>
+       <button onclick="location.href='checkout.html'">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>Subscribe to Our Newsletter</h2>
+  <p>Be the first to know about new collections and exclusive offers</p>
+
+  <div class="subscribe-box">
+    <input type="email" placeholder="Enter your email" />
+    <button>Subscribe</button>
+  </div>
+</section>
+
+
+  <!-- FOOTER  -->
+
+  <br><br><footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h2 class="footer-logo">LUXE.</h2>
+      <p>
+        Premium fashion for the modern connoisseur.
+        Elevate your style with our curated collections.
+      </p>
+
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-f"></i>
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h3>Shop</h3>
+      <ul>
+        <li>Women</li>
+        <li>Men</li>
+        <li>Accessories</li>
+        <li>New Arrivals</li>
+        <li>Sale</li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h3>Help</h3>
+      <ul>
+        <li>Customer Service</li>
+        <li>My Account</li>
+        <li>Find a Store</li>
+        <li>Shipping & Returns</li>
+        <li>FAQ</li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h3>About</h3>
+      <ul>
+        <li>Our Story</li>
+        <li>Careers</li>
+        <li>Corporate Responsibility</li>
+        <li>Press</li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+ <!-- FOOTER  -->
+
+</body>
+</html>
